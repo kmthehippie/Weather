@@ -8,14 +8,13 @@
     <link rel="stylesheet" href="styles.css" >
 </head>
 <body>
-    <div class="timeofday-image">
-        <img src="images/dawn.jpg" alt="">
+    <div class="body">
         <div class="current-data"></div>
         <div class="input-div">
             <form>
                 <div class="input-wrap">
                     <input type="text" id="location-input" class="input-field">
-                    <label for="location-input">London</label>
+                    <label for="location-input">Where to?</label>
                 </div>
                 <button id="input-btn">Go</button>               
             </form>
@@ -27,19 +26,36 @@
         <ul>
             <li>Credits to: </li>
             <li> Photo by <a href="https://www.pexels.com/photo/sunset-over-snow-covered-mountains-66997/">NO NAME</a>  </li>
-            <li>Photo by <a href="https://www.pexels.com/photo/beach-waves-during-sunset-5007016/">Jess Loiterton</a></li>
+            <li>Photo by <a href="https://www.pexels.com/photo/sea-of-clouds-during-sunset-681391/"></a>Aleksejs Bergmanis: </li>
+            
+            <li>Photo by <a href="https://www.pexels.com/photo/blue-sky-96622/">PhotoMIX Company</a> </li>
             <li>Photo by <a href="https://www.pexels.com/photo/beach-blue-clouds-coast-533961/">Pixabay</a> </li>
+            <li>Photo by <a href="https://www.pexels.com/photo/clouds-1254736/"></a>Max Andrey</li>
+            
             <li> Photo by <a href="https://www.pexels.com/photo/pine-trees-under-starry-night-sky-1539225/">James Wheeler</a></li>      
             <li>Photo by <a href="https://www.pexels.com/photo/stars-in-dark-night-sky-17964667/">Rümeysa</a></li>
         </ul>
     </footer>
-
+    <template id="body-template">
+        <div class="current-data"></div>
+        <div class="input-div">
+            <form>
+                <div class="input-wrap">
+                    <input type="text" id="location-input" class="input-field">
+                    <label for="location-input">Where to?</label>
+                </div>
+                <button id="input-btn">Go</button>               
+            </form>
+        </div>
+        <div class="additional-data"></div>
+        <div class="future-data"></div>
+    </template>
+    
     <template id="current-data-template">
         <div class="location-div">
             London
         </div>
-        <div >
-            <p class="last-updated-time-div"></p>
+        <div class="last-updated-time-div" >
         </div>
         <div class="current-temp-div">
             <h1 id="current-temp"></h1>

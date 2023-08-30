@@ -13,7 +13,7 @@ export const makeInputPretty = function() {
 
 export const timeOfDay = (ct)=>{
     let data = ct.split(" ")
-    let currentTime = data[1];
+    let currentTime = data[0];
     if (currentTime.length <5){
         currentTime = "0" + currentTime
     }
@@ -44,4 +44,5 @@ export const timeOfDay = (ct)=>{
     } else if (currentTime >= startMidnight && currentTime < endMidnight){
         return "midnight"
     }
+    
 }
