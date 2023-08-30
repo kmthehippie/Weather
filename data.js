@@ -63,8 +63,8 @@ export const data = {
             fcDiv.querySelector("img").src = forecast.day.condition.icon;
             fcDiv.querySelector("img").alt = forecast.day.condition.text;
 
-            const futureDataDiv = document.querySelector(".future-data")
-            futureDataDiv.appendChild(fcDiv)
+            const forecastDiv = document.querySelector(".forecast-div")
+            forecastDiv.appendChild(fcDiv)
         })
     },
     renderBG: async (t)=>{

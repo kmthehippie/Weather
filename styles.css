@@ -19,6 +19,10 @@ body{
     font-family: var(--roboto);
     position: relative;
 }
+.top-line{
+    width: 100vw;
+    position: relative;
+}
 /* BACKGROUND IMG */
 .body {
     width: 100vw;
@@ -203,8 +207,8 @@ form{
 .forecast-card{
     display: flex;
     align-items: center;
-    justify-content: space-around;
-    max-width: 800px;
+    justify-content: space-between;
+    max-width: 600px;
     width: 100%;
     height: auto;
 }
@@ -230,15 +234,16 @@ form{
 /* FOOTER */
 footer{
     position: absolute;
-    bottom: -2rem;
+    bottom: 0rem;
+    padding: 0.1rem;
+    background-color: #313866;
     color: var(--pink);
-    font-size: 10px;
+    font-size: 10%;
     width: 100vw;
 }
 footer ul{
     display: flex;
     justify-content: center;
-    gap: 1rem;
 }
 footer li{
     list-style: none;
@@ -246,4 +251,53 @@ footer li{
 footer a{
     text-decoration: none;
     color: var(--pink);
+}
+
+/* Media Query */
+@media(min-width: 320px){
+    .body{
+        height: 150vh;
+    }
+}
+@media(min-width: 480px){
+    .body{
+        height: 100vh;
+    }
+}
+@media (min-width: 650px){
+    .top-line{
+        max-width: 100vw;
+        width: 100%;
+    }
+}
+@media (min-width: 1000px){
+    .top-line{
+        max-width: 1200px;
+        width: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    .future-data{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .forecast-div{
+        width: 1200px;
+        align-content: center;
+        grid-template-columns: repeat(7, 1fr);
+        grid-template-rows: 1fr;
+        gap: 1.25rem;
+    }
+    .forecast-card{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+    .right-div{
+        padding-right: 1rem;
+    }
+
 }

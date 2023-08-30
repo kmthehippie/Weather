@@ -11,7 +11,11 @@
 </head>
 <body>
     <div class="body">
+        <div class="top-line">
         <div class="current-data"></div>
+        <div class="additional-data">
+        </div> 
+        </div>
         <div class="input-div">
             <form>
                 <div class="input-wrap">
@@ -21,10 +25,9 @@
                 <button id="input-btn">Go</button>               
             </form>
         </div>
-        <div class="additional-data">
-        </div>   
+  
         <div class="future-data">
-            
+            <div class="forecast-div"></div>
         </div>
     </div>
     <footer>
@@ -43,7 +46,11 @@
     </footer>
 
     <template id="body-template">
-        <div class="current-data"></div>
+        <div class="top-line">
+            <div class="current-data"></div>
+            <div class="additional-data"></div>
+        </div>
+        
         <div class="input-div">
             <form>
                 <div class="input-wrap">
@@ -53,8 +60,10 @@
                 <button id="input-btn">Go</button>               
             </form>
         </div>
-        <div class="additional-data"></div>
-        <div class="future-data"></div>
+        
+        <div class="future-data">
+            <div class="forecast-div"></div>
+        </div>
     </template>
     
     <template id="current-data-template">
@@ -107,7 +116,7 @@
     </div>
     </template>
     <template id="forecast-card-template">
-        <div class="forecast-div">
+
             <div class="forecast-card">
                 <div class="date-day">
                     <div class="forecast-day"></div>
@@ -123,7 +132,7 @@
                         <div class="forecast-avg-temp">25.9 &#176;C</div>
                     </div>
                 </div>
-            </div>
+            
         </div>
     </template>
 </body>
