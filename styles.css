@@ -32,8 +32,13 @@ img {
 }
 /* CURRENT DATA */
 .CF-btn{
-    color:var(--pink);
+    color:var(--pale-gray);
     cursor: pointer;
+    transform: 0.4ms;
+}
+.CF-btn:hover{
+    font-size: 1.25rem;
+    color: var(--pink);
 }
 .current-data{
     position: absolute;
@@ -47,7 +52,10 @@ img {
     flex-direction: column;
     gap: 0.25rem
 }
-
+.country-time-div{
+    display: flex;
+    gap: 0.5rem;
+}
 .location-div{
     font-size: 1rem;
 }
@@ -59,11 +67,17 @@ img {
 
 .feels-like-div{
     display: flex;
-    align-items: center;
-    
+    align-items: center;   
 }
+#feels-like{
+    margin-left: 0.25rem;
+}
+/* .condition-div{
+    display: flex;
+    align-items: center;
+} */
 .condition-div img{
-    width: 5vw;
+    width: 7vw;
 }
 .inactive{
     display: none;
@@ -131,7 +145,34 @@ form{
     right: 0;
     top: 0;
     padding: 1rem;
-    color: var(--purple)
+    color: var(--pale-gray);
+    margin-right: 0.5rem;
+    margin-top: 0.5rem;
+    font-size: 10px;
+    
+}
+.rain, .wind, .humidity{
+    display: flex;
+    align-items: start;
+    justify-content: end;
+
+}
+.fi{
+    font-size: 1.5rem;
+    margin-bottom: 0.25rem;
+    margin-left: 0.5rem;
+}
+.change{
+    transform: 0.4ms;
+    cursor: pointer;
+}
+.change:hover{
+    color: var(--pink);
+}
+.windspeed-div, .precip-div{
+    display: flex;
+    flex-direction: column;
+    align-items: end;
 }
 /* FUTURE DATA */
 .future-data{

@@ -6,6 +6,8 @@
     <title>Document</title>
     <script src="main.js" type="module" defer></script>
     <link rel="stylesheet" href="styles.css" >
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/uicons-regular-rounded/css/uicons-regular-rounded.css'>
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/uicons-regular-straight/css/uicons-regular-straight.css'>
 </head>
 <body>
     <div class="body">
@@ -19,7 +21,8 @@
                 <button id="input-btn">Go</button>               
             </form>
         </div>
-        <div class="additional-data"></div>
+        <div class="additional-data">
+        </div>   
         <div class="future-data"></div>
     </div>
     <footer>
@@ -53,23 +56,52 @@
     
     <template id="current-data-template">
         <div class="location-div">
-            London
         </div>
-        <div class="last-updated-time-div" >
+        <div class="country-time-div">
+            <div class="country-div"></div>
+            <div class="last-updated-time-div" >
+            </div>
         </div>
+       
         <div class="current-temp-div">
             <h1 id="current-temp"></h1>
             <div class="CF-btn">&#176;C</div>
         </div>
         <div class="feels-like-div">
-            <p>Feels like:  </p>
+            <p>Feels like:</p>
             <p id="feels-like"></p> 
             <div class="CF-btn">&#176;C</div>
         </div>
         <div class="condition-div">
             <p class="cur-cond-text"></p>
-            <img src="" alt="">
+            <img src="" alt="">        
         </div>
+    </template>
+
+    <template id="additional-data-template"> 
+        <div class="wind">
+            <div class="windspeed-div">
+                <div class="windspeed-num"></div>
+                <div class="windspeed-text"></div>
+            </div>
+            
+            <i class="fi fi-rr-wind change"></i>
+        </div>
+        <div class="rain">
+            <div class="precip-div">
+                <div class="precipitation-num"></div>
+                <div class="precipitation-text"></div>
+            </div>
+
+            <i class="fi fi-rs-raindrops change"></i>
+        </div>
+        <div class="humidity">
+            <div class="humid-div">
+                <div class="humidity-num"></div>
+            </div>
+            <i class="fi fi-rs-humidity"></i>
+        </div>
+    </div>
     </template>
 </body>
 </html>
