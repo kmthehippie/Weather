@@ -97,10 +97,7 @@ export const rainType = (rain) =>{
     }
 }
 
-export const humidType = (humidity) =>{
-    let humid = humidity
-    console.log(humid);
-}
+
 
 export const changeData = () => {
     const wind = document.querySelector(".wind")
@@ -121,4 +118,11 @@ export const changeData = () => {
             precip.textContent = data.rain[0];
         }
     })
+}
+
+export const whatDay = (d)=>{
+    let theDate = new Date(d)
+    let day = theDate.getDay();
+    const dayNames = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
+    return dayNames[day]
 }

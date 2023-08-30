@@ -1,4 +1,4 @@
-import { makeInputPretty, changeData, humidType, rainType, timeOfDay, windType } from "./general.js";
+import { makeInputPretty, changeData, rainType, timeOfDay, windType, whatDay } from "./general.js";
 
 export const data = {
     loc: ["Kuala Lumpur"],
@@ -10,6 +10,7 @@ export const data = {
     wind: [],
     rain: [],
     humidity: [],
+    forecast: [],
     renderCD: async() =>{
         const template = document.getElementById("current-data-template")
         let dupeTemplate = template.content.cloneNode(true);
@@ -41,6 +42,37 @@ export const data = {
         additionalDataDiv.appendChild(dupeTemp)
         changeData()
     },
+    renderFC: async() =>{
+        console.log(data.forecast);
+        const forecasts = data.forecast.forecastday;
+        forecasts.forEach(forecast => {
+            const fctemplate = document.getElementById("forecast-card-template");
+            let fcDiv = fctemplate.content.cloneNode(true);
+            fcDiv.querySelector(".forecast-date").textContent = forecast.date;
+            fcDiv.querySelector(".forecast-day").textContent = whatDay(forecast.date)
+            fcDiv.querySelector(".forecast-text").textContent = forecast.day.condition.text;
+            let avgTemp = fcDiv.querySelector(".forecast-avg-temp");
+            avgTemp.innerHTML = forecast.day.avgtemp_c + "&#176;C";
+            avgTemp.addEventListener("click", ()=>{
+                if(avgTemp.textContent.includes("C")){
+                    avgTemp.innerHTML = forecast.day.avgtemp_f + "&#176;F"
+                } else if(avgTemp.textContent.includes("F")){
+                    avgTemp.innerHTML = forecast.day.avgtemp_c + "&#176;C"
+                }
+            })
+            fcDiv.querySelector("img").src = forecast.day.condition.icon;
+            fcDiv.querySelector("img").alt = forecast.day.condition.text;
+
+            const futureDataDiv = document.querySelector(".future-data")
+            futureDataDiv.appendChild(fcDiv)
+        })
+    },
+    renderBG: async (t)=>{
+        let bgImg = document.querySelector(".body");
+        let createImg = document.createElement("img");
+        createImg.src = `./images/${t}.jpg`
+        bgImg.appendChild(createImg);
+    },
     assignData: async(d) =>{
         data.loc = d.location.name;
         data.country = d.location.country;
@@ -51,6 +83,8 @@ export const data = {
         data.wind = [d.current.wind_kph+" kph", d.current.wind_mph + " mph"];
         data.humidity = d.current.humidity + "%";
         data.rain = [d.current.precip_mm + " mm", d.current.precip_in + " in"]
+        data.forecast = d.forecast;
+        data.renderFC();
         data.renderCD();
     },
     getWeather: async function(loc){
@@ -91,10 +125,5 @@ export const data = {
             })
         })
     },
-    renderBG: async (t)=>{
-        let bgImg = document.querySelector(".body");
-        let createImg = document.createElement("img");
-        createImg.src = `./images/${t}.jpg`
-        bgImg.appendChild(createImg);
-    },
+    
 }
