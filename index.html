@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="main.js" type="module" defer></script>
+    <link rel="stylesheet" href="styles.css" >
+</head>
+<body>
+    <div class="timeofday-image">
+        <img src="images/dawn.jpg" alt="">
+        <div class="current-data"></div>
+        <div class="input-div">
+            <form>
+                <div class="input-wrap">
+                    <input type="text" id="location-input" class="input-field">
+                    <label for="location-input">London</label>
+                </div>
+                <button id="input-btn">Go</button>               
+            </form>
+        </div>
+        <div class="additional-data"></div>
+        <div class="future-data"></div>
+    </div>
+    <footer>
+        <ul>
+            <li>Credits to: </li>
+            <li> Photo by <a href="https://www.pexels.com/photo/sunset-over-snow-covered-mountains-66997/">NO NAME</a>  </li>
+            <li>Photo by <a href="https://www.pexels.com/photo/beach-waves-during-sunset-5007016/">Jess Loiterton</a></li>
+            <li>Photo by <a href="https://www.pexels.com/photo/beach-blue-clouds-coast-533961/">Pixabay</a> </li>
+            <li> Photo by <a href="https://www.pexels.com/photo/pine-trees-under-starry-night-sky-1539225/">James Wheeler</a></li>      
+            <li>Photo by <a href="https://www.pexels.com/photo/stars-in-dark-night-sky-17964667/">Rümeysa</a></li>
+        </ul>
+    </footer>
+
+    <template id="current-data-template">
+        <div class="location-div">
+            London
+        </div>
+        <div >
+            <p class="last-updated-time-div"></p>
+        </div>
+        <div class="current-temp-div">
+            <h1 id="current-temp"></h1>
+            <div class="CF-btn">&#176;C</div>
+        </div>
+        <div class="feels-like-div">
+            <p>Feels like:  </p>
+            <p id="feels-like"></p> 
+            <div class="CF-btn">&#176;C</div>
+        </div>
+        <div class="condition-div">
+            <p class="cur-cond-text"></p>
+            <img src="" alt="">
+        </div>
+    </template>
+</body>
+</html>
