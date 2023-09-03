@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="main.js"></script>
+    <link rel="stylesheet" href="../src/styles.css" >
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/uicons-regular-rounded/css/uicons-regular-rounded.css'>
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/uicons-regular-straight/css/uicons-regular-straight.css'>
+</head>
+<body>
+    <div class="body">
+        <div class="top-line">
+        <div class="current-data"></div>
+        <div class="additional-data">
+        </div> 
+        </div>
+        <div class="input-div">
+            <form>
+                <div class="input-wrap">
+                    <input type="text" id="location-input" class="input-field">
+                    <label for="location-input">Where to?</label>
+                </div>
+                <button id="goBtn">Go</button>               
+            </form>
+        </div>
+  
+        <div class="future-data">
+            <div class="forecast-div"></div>
+        </div>
+    </div>
+    <footer>
+        <ul>
+            <li>Credits to: </li>
+            <li> Photo by <a href="https://www.pexels.com/photo/sunset-over-snow-covered-mountains-66997/">NO NAME</a>  </li>
+            <li>Photo by <a href="https://www.pexels.com/photo/sea-of-clouds-during-sunset-681391/"></a>Aleksejs Bergmanis: </li>
+            
+            <li>Photo by <a href="https://www.pexels.com/photo/blue-sky-96622/">PhotoMIX Company</a> </li>
+            <li>Photo by <a href="https://www.pexels.com/photo/beach-blue-clouds-coast-533961/">Pixabay</a> </li>
+            <li>Photo by <a href="https://www.pexels.com/photo/clouds-1254736/"></a>Max Andrey</li>
+            
+            <li> Photo by <a href="https://www.pexels.com/photo/pine-trees-under-starry-night-sky-1539225/">James Wheeler</a></li>      
+            <li>Photo by <a href="https://www.pexels.com/photo/stars-in-dark-night-sky-17964667/">Rümeysa</a></li>
+        </ul>
+    </footer>
+
+    <template id="body-template">
+        <div class="top-line">
+            <div class="current-data"></div>
+            <div class="additional-data"></div>
+        </div>
+        
+        <div class="input-div">
+            <form>
+                <div class="input-wrap">
+                    <input type="text" id="location-input" class="input-field">
+                    <label for="location-input">Where to?</label>
+                </div>
+                <button id="goBtn">Go</button>               
+            </form>
+        </div>
+        
+        <div class="future-data">
+            <div class="forecast-div"></div>
+        </div>
+    </template>
+    
+    <template id="current-data-template">
+        <div class="location-div">
+        </div>
+        <div class="country-time-div">
+            <div class="country-div"></div>
+            <div class="last-updated-time-div" >
+            </div>
+        </div>
+       
+        <div class="current-temp-div">
+            <h1 id="current-temp"></h1>
+            <div class="CF-btn">&#176;C</div>
+        </div>
+        <div class="feels-like-div">
+            <p>Feels like:</p>
+            <p id="feels-like"></p> 
+            <div class="CF-btn">&#176;C</div>
+        </div>
+        <div class="condition-div">
+            <p class="cur-cond-text"></p>
+            <img src="" alt="">        
+        </div>
+    </template>
+
+    <template id="additional-data-template"> 
+        <div class="wind">
+            <div class="windspeed-div">
+                <div class="windspeed-num"></div>
+                <div class="windspeed-text"></div>
+            </div>
+            
+            <i class="fi fi-rr-wind change"></i>
+        </div>
+        <div class="rain">
+            <div class="precip-div">
+                <div class="precipitation-num"></div>
+                <div class="precipitation-text"></div>
+            </div>
+
+            <i class="fi fi-rs-raindrops change"></i>
+        </div>
+        <div class="humidity">
+            <div class="humid-div">
+                <div class="humidity-num"></div>
+            </div>
+            <i class="fi fi-rs-humidity"></i>
+        </div>
+    </div>
+    </template>
+    <template id="forecast-card-template">
+
+            <div class="forecast-card">
+                <div class="date-day">
+                    <div class="forecast-day"></div>
+                    <div class="forecast-date"></div>
+                </div>
+                <div class="right-div">
+                    <div class="forecast-icon">
+                        <img src="" alt="">
+                    </div>
+                    <div class="temp-desc">
+                        <div class="forecast-text"></div>
+                        <!-- make this can change to F -->
+                        <div class="forecast-avg-temp">25.9 &#176;C</div>
+                    </div>
+                </div>
+            
+        </div>
+    </template>
+</body>
+</html>
